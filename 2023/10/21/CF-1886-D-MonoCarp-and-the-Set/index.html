@@ -14,7 +14,7 @@
 <meta property="og:description" content="今天学习一道CF 2100+ 分的题目 原题链接： D. Monocarp and the Set   题目的大概意思是：你有 1-n 这 n 个数字，每次从中选择一个数字加入一个原本是空的集合。除了第一次插入，如果加入的数字比当前集合内的最大值还要大，那么输出一个 &#39;&gt;&#39; ；如果加入的数字比当前集合内的最小值还要小，那么输出一个 &#39;&lt;&#39; ;不是上述两种情况，则输出一个 &#39;?&#39; 。插入">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-21T04:52:23.000Z">
-<meta property="article:modified_time" content="2023-10-23T15:01:42.605Z">
+<meta property="article:modified_time" content="2023-10-23T17:11:00.670Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -103,8 +103,8 @@
       
         <p>今天学习一道CF <strong>2100+</strong> 分的题目</p>
 <p><strong>原题链接</strong>： <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1886/problem/D">D. Monocarp and the Set</a></p>
-<p>  题目的大概意思是：你有 <em><strong>1-n</strong></em> 这 <em><strong>n</strong></em> 个数字，每次从中选择一个数字加入一个原本是空的集合。除了第一次插入，如果加入的数字比当前集合内的最大值还要大，那么输出一个 <code>'&gt;'</code> ；如果加入的数字比当前集合内的最小值还要小，那么输出一个 <code>'&lt;'</code> ;不是上述两种情况，则输出一个 <code>'?'</code> 。插入所有数字之后，你会得到一个长度为 <em><strong>n-1</strong></em> 的字符串 <em><strong>s</strong></em> 。</p>
-<p>  现在给你 <em><strong>n</strong></em>, <em><strong>m</strong></em> 个query（每个query会替换 <em><strong>s</strong></em> 中的一个字符）, 初始字符串 <em><strong>s</strong></em> ，求每次query后有多少种插入的方式，能使最后得到输出是字符串 <em><strong>s</strong></em> 。</p>
+<p>  题目的大概意思是：你有 <code>1-n</code> 这 <code>n</code> 个数字，每次从中选择一个数字加入一个原本是空的集合。除了第一次插入，如果加入的数字比当前集合内的最大值还要大，那么输出一个 <code>'&gt;'</code> ；如果加入的数字比当前集合内的最小值还要小，那么输出一个 <code>'&lt;'</code> ;不是上述两种情况，则输出一个 <code>'?'</code> 。插入所有数字之后，你会得到一个长度为 <code>n-1</code> 的字符串 <code>s</code> 。</p>
+<p>  现在给你 <code>n</code>, <code>m</code> 个query（每个query会替换 <code>s</code> 中的一个字符）, 初始字符串 <code>s</code> 。求每次query后，有多少种插入的方式，能使最后得到输出是字符串 <code>s</code> 。</p>
 <p><em><strong>输入范围</strong></em></p>
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>3</mn><mo>∗</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">2 \le n \le 3*10^{5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mn>3</mn><mo>∗</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \le m \le 3*10^{5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span></p>
 <span id="more"></span>
@@ -113,7 +113,7 @@
 <p>  因为集合最后的状态是确定的，即1-n都在集合中，所以这道题用逆序的思维去考虑会简单很多。</p>
 <p>  之前也有类似的题目，这种插入和删除的题目都可以尝试逆向思考。</p>
 <p>  逆序遍历字符串s，每个 <code>'&gt;'</code> 和 <code>'&lt;'</code> 都只能去掉集合中最大的数字和最小的数字，因此对答案都无影响，遍历到 <code>'?'</code> 时会从集合中间去掉一个数字，因此有 <code>i-1</code> 中选法，<code>i</code> 是当前位置的下标，从<strong>0</strong>开始，下同。</p>
-<p>  在每一个query更新答案时，如果是 <code>'&gt;'or'&lt;' -&gt; '?'</code>，那么答案应该乘以 <code>i-1</code> ；如果是 <code>'?' -&gt; '&gt;'or'&lt;'</code>，那么答案应该除以 <code>i-1</code> 。这里的 <code>i</code> 是修改的位置的下标。</p>
+<p>  在每一个query更新答案时，如果是 <code>'&gt;'or'&lt;'</code> -&gt; <code>'?'</code>，那么答案应该乘以 <code>i-1</code> ；如果是 <code>'?'</code> -&gt; <code>'&gt;'or'&lt;'</code>，那么答案应该除以 <code>i-1</code> 。这里的 <code>i</code> 是修改的位置的下标。</p>
 <p>  <strong>特殊情况</strong>，如果第0个字符是 <code>'?'</code> ,这种情况可能得插入方式是<strong>0</strong>种，因为插入第1个字符时集合中只有一个元素，因此插入元素必须比该元素大或小，因此不可能是 <code>'?'</code> 。</p>
 <p>  用到的两个小知识点：</p>
 <ol>
@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/21/CF-1886-D-MonoCarp-and-the-Set/" data-id="clo31o1ju0000487na78lb68t" data-title="CF-1886-D MonoCarp and the Set" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/10/21/CF-1886-D-MonoCarp-and-the-Set/" data-id="clo35mpvx0000797nb1lihien" data-title="CF-1886-D MonoCarp and the Set" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
