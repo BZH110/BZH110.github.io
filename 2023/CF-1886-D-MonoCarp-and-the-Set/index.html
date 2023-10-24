@@ -14,7 +14,7 @@
 <meta property="og:description" content="今天学习一道CF 2100+ 分的题目 原题链接： D. Monocarp and the Set   题目的大概意思是：你有 1-n 这 n 个数字，每次从中选择一个数字加入一个原本是空的集合。除了第一次插入，如果加入的数字比当前集合内的最大值还要大，那么输出一个 &#39;&gt;&#39; ；如果加入的数字比当前集合内的最小值还要小，那么输出一个 &#39;&lt;&#39; ;不是上述两种情况，则输出一个 &#39;?&#39; 。插入">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-21T04:52:23.000Z">
-<meta property="article:modified_time" content="2023-10-24T04:34:43.214Z">
+<meta property="article:modified_time" content="2023-10-24T07:00:46.917Z">
 <meta property="article:author" content="Custard Bao">
 <meta name="twitter:card" content="summary">
   
@@ -114,7 +114,7 @@
 <p>  之前也有类似的题目，这种插入和删除的题目都可以尝试逆向思考。</p>
 <p>  逆序遍历字符串s，每个 <code>'&gt;'</code> 和 <code>'&lt;'</code> 都只能去掉集合中最大的数字和最小的数字，因此对答案都无影响，遍历到 <code>'?'</code> 时会从集合中间去掉一个数字，因此有 <code>i-1</code> 中选法，<code>i</code> 是当前位置的下标，从<strong>0</strong>开始，下同。</p>
 <p>  在每一个query更新答案时，如果是 <code>'&gt;'or'&lt;'</code> -&gt; <code>'?'</code>，那么答案应该乘以 <code>i-1</code> ；如果是 <code>'?'</code> -&gt; <code>'&gt;'or'&lt;'</code>，那么答案应该除以 <code>i-1</code> 。这里的 <code>i</code> 是修改的位置的下标。</p>
-<p>  <strong>特殊情况</strong>，如果第0个字符是 <code>'?'</code> ,这种情况可能得插入方式是<strong>0</strong>种，因为插入第1个字符时集合中只有一个元素，因此插入元素必须比该元素大或小，因此不可能是 <code>'?'</code> 。</p>
+<p>  <strong>特殊情况</strong>，如果 <code>s[0]</code> 是 <code>'?'</code> ,这种情况可能得插入方式是<strong>0</strong>种，因为插入第2个数字时集合中只有一个元素，因此插入元素必须比该元素大或小，因此不可能是 <code>'?'</code> 。</p>
 <p>  用到的两个小知识点：</p>
 <ol>
 <li>取余之后应用除法需要用到 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86">费马小定理</a></li>
@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://custardbao.me/2023/CF-1886-D-MonoCarp-and-the-Set/" data-id="clo3u1qa20000r17nc8u5d4dx" data-title="CF-1886-D MonoCarp and the Set" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://custardbao.me/2023/CF-1886-D-MonoCarp-and-the-Set/" data-id="clo3z9nwk0000dc7n8pbu0rdm" data-title="CF-1886-D MonoCarp and the Set" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
